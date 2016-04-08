@@ -1,7 +1,8 @@
 require 'yaml'
 require 'active_record'
 
-conf = YAML.load_file('config/database.yml')
+template = ERB.new File.new("config/database.yml.erb").read
+conf = YAML.load template.result(binding)
 ActiveRecord::Base.establish_connection conf["development"]
 
 require_relative '../lib/job_looper'

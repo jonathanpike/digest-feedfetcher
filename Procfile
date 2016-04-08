@@ -1,2 +1,2 @@
-main: ./bin/feedfetcher.rb
+main: ruby ./bin/feedfetcher.rb
 worker: sidekiq -r ./bin/fetch_articles_job.rb -c 5
