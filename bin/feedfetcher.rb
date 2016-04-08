@@ -1,4 +1,5 @@
 require 'yaml'
+require 'erb'
 require 'active_record'
 
 template = ERB.new File.new("config/database.yml.erb").read
